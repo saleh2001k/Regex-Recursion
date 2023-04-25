@@ -3,20 +3,21 @@
 
 
 /* Write a function that take a string and return true if the string only contain uppercase and lowercase
-characters (no numbers and symbols) and it should end with capital A else return false */
+characters (no numbers and symbols) and it should end with capital A else return false */ 
 
-function capitalA(s){
-    // Add your logic.
-    return;
-}
+function capitalA(s) {
+    if (/^[a-zA-Z\s]+$/.test(s) && s.endsWith("A")) {
+      return true;
+    }
+    return false;
+  }
 
 
 /* Write a function that take a string and return true if the the sting is following the emails pattern
 which end with io (example@example.io) */
 
-function ioEmail(email){
-    // Add your logic.
-    return;
+function ioEmail(email) {
+    return /\w{7}@\w{7}[.]io$/.test(email);
 }
 
 /* You have a text that contain image names with their extention you need to write a function to 
@@ -26,11 +27,11 @@ required extention are jpg, jpeg and png.
 
 */
 
-function imagesSearcher(text){
-    let arr = [];
-    // Add your logic.
-    return arr
-}
+function imagesSearcher(text) {
+    const regex = /\b\w+\.(jpg|jpeg|png)\b/gi;
+    const matches = text.match(regex);
+    return matches || [];
+  }
 
 
 describe("Test capitalA", ()=>{
